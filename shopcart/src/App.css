@@ -82,6 +82,11 @@
   align-items: center;
 }
 
+.Quantity-contents {
+  display: flex;
+  flex-direction: column;
+}
+
 .Quantity-box {
   border: #e4e4e4 2.5px solid;
   padding: 10px 15px;

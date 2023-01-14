@@ -51,8 +51,10 @@ function Items( props ) {
           </div>
           <span className='Item-contents'>
             <img src={item.img} alt="" className='Item-img' />
-            <span className='Quantity-box'>{item.quantity}</span> quantity
-
+            <div className='Quantity-contents'>
+              Quantity
+              <span className='Quantity-box'>{item.quantity}</span>
+            </div>
           </span>
         </ListGroupItem>
       ) )}
