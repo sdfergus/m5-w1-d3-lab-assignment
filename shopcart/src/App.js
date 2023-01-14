@@ -1,9 +1,9 @@
 import './App.css';
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ListGroup, ListGroupItem } from "reactstrap";
 import PRODUCTS from './products';
 import Nav from './navbar'
+import DisplayProducts from './displayProducts';
 
 class App extends Component {
   constructor( props ) {
@@ -18,35 +18,11 @@ class App extends Component {
       <div>
         <Nav />
         <main>
-          <Items productItems={this.state.productsData}></Items>
+          <DisplayProducts productItems={this.state.productsData}></DisplayProducts>
         </main>
       </div>
     );
   }
-}
-
-function Items( props ) {
-  return (
-    <ListGroup>
-      {props.productItems.map( ( item ) => (
-        <ListGroupItem
-          className='List-items'
-          key={item.id}
-        >
-          <div className='Item-name'>
-            {item.name}
-          </div>
-          <span className='Item-contents'>
-            <img src={item.img} alt="" className='Item-img' />
-            <div className='Quantity-contents'>
-              Quantity
-              <span className='Quantity-box'>{item.quantity}</span>
-            </div>
-          </span>
-        </ListGroupItem>
-      ) )}
-    </ListGroup>
-  )
 }
 
 export default App;
