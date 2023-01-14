@@ -38,18 +38,29 @@
 }
 
 /* My custom styles */
-.Shop-header {
+.Shop-nav {
   min-height: 10vh;
   background-color: #61dafb;
   padding: 30px 35px;
-  display: flex;
   align-items: center;
+}
+
+.Shop-nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-bottom: 0;
   justify-content: space-between;
+  align-items: inherit;
+}
+
+.Shop-nav ul li {
+  color: white;
 }
 
 .Cart-section {
   display: flex;
   align-items: center;
+  padding-right: 30px;
 }
 
 .Item-name {

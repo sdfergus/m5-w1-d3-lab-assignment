@@ -17,13 +17,19 @@ class App extends Component {
   render() {
     return (
       <div>
-        <header className='Shop-header'>
-          <h1>Shop to React</h1>
-          <span className='Cart-section'>
-            <FontAwesomeIcon icon={faShoppingCart} className='mx-3' />
-            0 items
-          </span>
-        </header>
+        <nav className='Shop-nav'>
+          <ul>
+            <li>
+              <h1>Shop to React</h1>
+            </li>
+            <li>
+              <span className='Cart-section'>
+                <FontAwesomeIcon icon={faShoppingCart} className='mx-3' />
+                0 items
+              </span>
+            </li>
+          </ul>
+        </nav>
         <main>
           <Items productItems={this.state.productsData}></Items>
         </main>
