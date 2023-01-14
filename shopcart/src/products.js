@@ -1,4 +1,4 @@
-const Catalog = [
+const PRODUCTS = [
   {
     id: 1,
     name: 'Unisex Cologne',
@@ -29,4 +29,4 @@ const Catalog = [
   },
 ]
 
-export default Catalog;
+export default PRODUCTS;
