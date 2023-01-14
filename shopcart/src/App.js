@@ -1,10 +1,9 @@
 import './App.css';
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ListGroup, ListGroupItem } from "reactstrap";
 import PRODUCTS from './products';
+import Nav from './navbar'
 
 class App extends Component {
   constructor( props ) {
@@ -17,19 +16,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav className='Shop-nav'>
-          <ul>
-            <li>
-              <h1>Shop to React</h1>
-            </li>
-            <li>
-              <span className='Cart-section'>
-                <FontAwesomeIcon icon={faShoppingCart} className='mx-3' />
-                0 items
-              </span>
-            </li>
-          </ul>
-        </nav>
+        <Nav />
         <main>
           <Items productItems={this.state.productsData}></Items>
         </main>
