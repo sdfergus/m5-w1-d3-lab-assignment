@@ -5,8 +5,8 @@ import { Modal } from "react-bootstrap";
 
 function DisplayProducts( props ) {
 
-  const [ show, setShow ] = useState( false );  //to show modal
-  const [ showImg, setShowImg ] = useState( {} );
+  const [ show, setShow ] = useState( false );  //to show modal - initial variable state is false
+  const [ showImg, setShowImg ] = useState( {} ); //initial product showing is an empty obj
 
   //handle calling from event clicks
   const handleClose = () => setShow( false );
