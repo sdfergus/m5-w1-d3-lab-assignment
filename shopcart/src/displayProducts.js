@@ -6,13 +6,13 @@ import { Modal } from "react-bootstrap";
 function DisplayProducts( props ) {
 
   const [ show, setShow ] = useState( false );  //to show modal - initial variable state is false
-  const [ showImg, setShowImg ] = useState( {} ); //initial product showing is an empty obj
+  const [ showData, setShowData ] = useState( {} ); //initial product showing is an empty obj
 
   //handle calling from event clicks
-  const handleClose = () => setShow( false );
-  const handleShow = ( product ) => {
+  const handleClose = () => setShow( false );  //hides modal
+  const handleShow = ( product ) => {   //shows product modal
     setShow( true );
-    setShowImg( product );
+    setShowData( product );
   }
 
   return (
@@ -29,7 +29,7 @@ function DisplayProducts( props ) {
             <span className='Item-contents'>
               <img
                 src={product.img}
-                alt=""
+                alt={product.alt}
                 className='Item-img'
                 onClick={() => handleShow( product )} />
               <div className='Quantity-contents'>
@@ -43,16 +43,16 @@ function DisplayProducts( props ) {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{showImg.name}</Modal.Title>
+          <Modal.Title>{showData.name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <img
-            src={showImg.img}
+            src={showData.img}
             width="350"
-            alt={showImg.alt}
+            alt={showData.alt}
             className="mx-5"
           />
-          <p><span className="text-dark">Ratings: </span>{showImg.ratings}/5</p>
+          <p><span className="text-dark">Ratings: </span>{showData.ratings}/5</p>
         </Modal.Body>
       </Modal>
     </div>
