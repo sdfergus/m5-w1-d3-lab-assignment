@@ -37,12 +37,12 @@ function DisplayProducts( props ) {
               <FontAwesomeIcon
                 icon={faSquarePlus}
                 className="fa-2x mx-3"
-                onClick={() => console.log( product.name + ' Plus button clicked!' )}
+                onClick={() => props.addItem( product )}
               />
               <FontAwesomeIcon
                 icon={faSquareMinus}
                 className="fa-2x"
-                onClick={() => console.log( product.name + ' Sub button clicked!' )}
+                onClick={() => product.quantity === 0 ? product.quantity = 0 : props.removeItem( product )}
               />
               <div className='Quantity-contents mx-4'>
                 Quantity

@@ -13,12 +13,24 @@ class App extends Component {
     }
   }
 
+  handleAddedItem = ( product ) => {
+    const counter = ++product.quantity;
+    product.quantity = counter;
+    this.setState( product );
+  }
+
+  handleRemovedItem = ( product ) => {
+    const counter = --product.quantity;
+    product.quantity = counter;
+    this.setState( product );
+  }
+
   render() {
     return (
       <div>
         <Nav />
         <main>
-          <DisplayProducts productItems={this.state.ProductsList}></DisplayProducts>
+          <DisplayProducts productItems={this.state.ProductsList} addItem={this.handleAddedItem} removeItem={this.handleRemovedItem}></DisplayProducts>
         </main>
       </div>
     );
