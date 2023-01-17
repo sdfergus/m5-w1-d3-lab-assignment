@@ -92,3 +92,8 @@
   padding: 10px 15px;
   margin: 0 10px;
 }
+
+.Nav-links {
+  text-decoration: none;
+  color: white;
+}
