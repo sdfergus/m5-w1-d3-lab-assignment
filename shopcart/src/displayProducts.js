@@ -2,6 +2,8 @@ import React from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
+import { faSquarePlus, faSquareMinus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function DisplayProducts( props ) {
 
@@ -32,7 +34,17 @@ function DisplayProducts( props ) {
                 alt={product.alt}
                 className='Item-img'
                 onClick={() => handleShow( product )} />
-              <div className='Quantity-contents'>
+              <FontAwesomeIcon
+                icon={faSquarePlus}
+                className="fa-2x mx-3"
+                onClick={() => console.log( product.name + ' Plus button clicked!' )}
+              />
+              <FontAwesomeIcon
+                icon={faSquareMinus}
+                className="fa-2x"
+                onClick={() => console.log( product.name + ' Sub button clicked!' )}
+              />
+              <div className='Quantity-contents mx-4'>
                 Quantity
                 <span className='Quantity-box'>{product.quantity}</span>
               </div>
