@@ -6,7 +6,6 @@ import { faSquarePlus, faSquareMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function DisplayProducts( props ) {
-
   const [ show, setShow ] = useState( false );  //to show modal - initial variable state is false
   const [ showData, setShowData ] = useState( {} ); //initial product showing is an empty obj
 
