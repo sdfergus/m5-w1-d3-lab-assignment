@@ -34,8 +34,8 @@ class App extends Component {
 
   handleCartTotal = () => {
     const currList = this.state.ProductsList;
-    const cartTotal = currList.reduce( ( previousValue, currentValue ) => {
-      return previousValue + currentValue.quantity;  // <--- 3 + 5 + 4 + 11 + 7 + 22 = 52
+    const cartTotal = currList.reduce( ( prevVal, currVal ) => {
+      return prevVal + currVal.quantity;
     }, 0 )
     return cartTotal;
   }
