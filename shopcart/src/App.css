@@ -41,7 +41,7 @@
 .Shop-nav {
   min-height: 10vh;
   background-color: #61dafb;
-  padding: 30px 35px;
+  padding: 30px 20px;
   align-items: center;
 }
 
@@ -73,8 +73,13 @@
   margin-right: 40px;
 }
 
-.List-items {
-  padding-left: 30px !important;
+.Product-items .List-items {
+  padding-left: 50px !important;
+}
+
+.Add-Rm-Btns {
+  position: relative;
+  top: 10px;
 }
 
 .Item-contents {
@@ -89,6 +94,7 @@
 
 .Quantity-box {
   border: #e4e4e4 2.5px solid;
+  width: 45px;
   padding: 10px 15px;
   margin: 0 10px;
 }
@@ -96,4 +102,22 @@
 .Nav-links {
   text-decoration: none;
   color: white;
+}
+
+.Nav-links:hover {
+  color: white;
+}
+
+.Cart-items .List-items {
+  padding-left: 30px !important;
+}
+
+.Cart-text {
+  width: 90px;
+}
+
+.R-icon {
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
 }

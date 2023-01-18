@@ -4,12 +4,12 @@ import "./App.css";
 
 function Cart( props ) {
   return (
-    <div className="p-5 mx-5 my-2">
+    <div className="Cart-items p-5 mx-5 my-2">
       <h2>Your Cart Items</h2>
-      <ListGroup>
+      <ListGroup className="w-75">
         {props.cartItems.map( ( item ) => (
           <ListGroupItem
-            className='List-items'
+            className='List-items py-3'
             key={item.id}
           >
             <div className='Item-contents'>

@@ -9,10 +9,6 @@ function DisplayProducts( props ) {
   const [ show, setShow ] = useState( false );  //to show modal - initial variable state is false
   const [ showData, setShowData ] = useState( {} ); //initial product showing is an empty obj
 
-  //holds cart products
-  const [ cartItems, setCartItems ] = useState( [] );
-  // console.log( 'Updated Cart:', cartItems );
-
   //handle calling from event clicks
   const handleClose = () => setShow( false );  //hides modal
   const handleShow = ( product ) => {   //shows product modal
@@ -20,30 +16,12 @@ function DisplayProducts( props ) {
     setShowData( product );
   }
 
-  /* const handleCartItems = ( product ) => {
-     // console.log( 'This is product:', product );
- 
-     // if ( cartItems.length ) {
-     //   // console.log( 'CartItems: ', cartItems );
-     // }
-     setUniqueItems( product );
- 
-     if ( !uniqueItems[ product ] ) {
- 
-       setUniqueItems( product );
-     }
- 
-     const updateCart = [ ...cartItems, product ];
-     setCartItems( updateCart );
-   }
-   */
-
   return (
-    <div>
+    <div className="Product-items">
       <ListGroup>
         {props.productItems.map( ( product ) => (
           <ListGroupItem
-            className='List-items'
+            className='List-items py-3'
             key={product.id}
           >
             <div className='Item-name'>
@@ -55,20 +33,21 @@ function DisplayProducts( props ) {
                 alt={product.alt}
                 className='Item-img'
                 onClick={() => handleShow( product )} />
-              <FontAwesomeIcon
-                icon={faSquarePlus}
-                className="fa-2x mx-3"
-                onClick={() => {
-                  props.addItem( product );
-                  // handleCartItems( product )
-                }
-                }
-              />
-              <FontAwesomeIcon
-                icon={faSquareMinus}
-                className="fa-2x"
-                onClick={() => product.quantity === 0 ? product.quantity = 0 : props.removeItem( product )}
-              />
+              <span className="Add-Rm-Btns">
+                <FontAwesomeIcon
+                  icon={faSquarePlus}
+                  className="fa-2x mx-3"
+                  onClick={() => {
+                    props.addItem( product );
+                  }
+                  }
+                />
+                <FontAwesomeIcon
+                  icon={faSquareMinus}
+                  className="fa-2x"
+                  onClick={() => product.quantity === 0 ? product.quantity = 0 : props.removeItem( product )}
+                />
+              </span>
               <div className='Quantity-contents mx-4'>
                 Quantity
                 <span className='Quantity-box'>{product.quantity}</span>

@@ -16,7 +16,7 @@ function Nav( props ) {
               <h1>Shop 2
                 <FontAwesomeIcon
                   icon={faR}
-                  className="fa-sm bg-white rounded-circle text-info py-2 px-3">
+                  className="R-icon fa-sm bg-white rounded-circle text-info py-2 px-3">
                 </FontAwesomeIcon>
                 eact
               </h1>
@@ -28,7 +28,7 @@ function Nav( props ) {
                 <FontAwesomeIcon
                   icon={faShoppingCart}
                   className='mx-3' />
-                {props.cartTotal} items
+                <span className="Cart-text">{props.cartTotal} items</span>
               </span>
             </Link>
           </li>
