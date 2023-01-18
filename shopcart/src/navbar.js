@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DisplayProducts from './displayProducts';
+import Cart from './cart';
 
 function Nav( props ) {
   return (
@@ -27,7 +28,7 @@ function Nav( props ) {
                 <FontAwesomeIcon
                   icon={faShoppingCart}
                   className='mx-3' />
-                0 items
+                {props.cartTotal} items
               </span>
             </Link>
           </li>
@@ -35,7 +36,13 @@ function Nav( props ) {
       </nav>
 
       <Routes>
-        {/* <Route path="/cart" element={<Cart />} /> */}
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cartItems={props.displayCartItems}
+            />
+          } />
         <Route
           path="/"
           element={

@@ -24,6 +24,22 @@ class App extends Component {
     this.setState( product );
   }
 
+  handleCartDisplay = () => {
+    const currList = this.state.ProductsList;
+    const cartItems = currList.filter( ( items ) => {
+      return items.quantity > 0
+    } )
+    return cartItems;
+  }
+
+  handleCartTotal = () => {
+    const currList = this.state.ProductsList;
+    const cartTotal = currList.reduce( ( previousValue, currentValue ) => {
+      return previousValue + currentValue.quantity;  // <--- 3 + 5 + 4 + 11 + 7 + 22 = 52
+    }, 0 )
+    return cartTotal;
+  }
+
   render() {
     return (
       <div>
@@ -31,6 +47,8 @@ class App extends Component {
           productItems={this.state.ProductsList}
           addItem={this.handleAddedItem}
           removeItem={this.handleRemovedItem}
+          displayCartItems={this.handleCartDisplay()}
+          cartTotal={this.handleCartTotal()}
         />
       </div>
     );
