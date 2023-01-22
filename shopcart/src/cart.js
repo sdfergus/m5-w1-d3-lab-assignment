@@ -42,7 +42,7 @@ function Cart( props ) {
               to="/"
               className="btn btn-success mt-2"
             >
-              Continue Shop
+              Continue Shopping
             </Link>
           </React.Fragment>
           : <Link
