@@ -5,6 +5,7 @@ import React from "react";
 import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DisplayProducts from './displayProducts';
 import Cart from './cart';
+import FbLogin from "./fbLogin";
 
 function Nav( props ) {
   return (
@@ -28,7 +29,7 @@ function Nav( props ) {
                 <FontAwesomeIcon
                   icon={faShoppingCart}
                   className='mx-3' />
-                <span className="Cart-text">{props.cartTotal} items</span>
+                <span className="Cart-text">{props.cartTotal === 1 ? props.cartTotal + ' item' : props.cartTotal + ' items'}</span>
               </span>
             </Link>
           </li>
@@ -53,6 +54,11 @@ function Nav( props ) {
             />
           }
         />
+        <Route
+          path="/fbLogin"
+          element={
+            <FbLogin />
+          } />
       </Routes>
     </Router>
   )

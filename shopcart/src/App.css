@@ -121,3 +121,7 @@
   top: 10px;
   margin-left: 10px;
 }
+
+.card-text form {
+  width: 250px;
+}

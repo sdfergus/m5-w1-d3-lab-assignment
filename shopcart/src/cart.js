@@ -2,10 +2,10 @@ import React from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
 import "./App.css";
 import { Link } from "react-router-dom";
+// import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import FbLogin from "./fbLogin";
 
 function Cart( props ) {
-  // console.log( 'PROPS in cart: ', props.cartItems, props.cartItems.length );
   return (
     <div className="Cart-items p-5 mx-5 my-2">
       <h2>Your Cart Items</h2>
@@ -41,20 +41,29 @@ function Cart( props ) {
             <Link
               to="/"
               className="btn btn-success mt-2"
-            // onClick={ }
             >
               Continue Shop
             </Link>
           </React.Fragment>
-          : <button
-            type="button"
+          : <Link
+            to='/fbLogin'
             className="btn btn-primary mt-4"
-          // onClick={ }
           >
             Check Out
-          </button>
+          </Link>
       }
+
+      {/* <Router>
+        <Routes>
+          <Route
+            path="/fbLogin"
+            element={
+              <FbLogin />
+            } />
+        </Routes>
+      </Router> */}
     </div>
+
   )
 }
 
