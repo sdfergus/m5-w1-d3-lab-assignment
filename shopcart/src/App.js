@@ -7,6 +7,7 @@ class App extends Component {
   constructor( props ) {
     super( props );
     this.state = {
+      selectOption: 'Normal',
       ProductsList: ProductsData
     }
   }
@@ -39,6 +40,30 @@ class App extends Component {
     return cartTotal;
   }
 
+  handleSelect = ( event ) => {
+
+    const range = event.target.value;
+    const products = this.state.ProductsList;
+
+    switch ( range ) {
+      case "Normal":
+        products.sort( ( a, b ) => a.id - b.id );
+        this.setState( { selectOption: range, ProductsList: products } );
+        break;
+      case "Lowest":
+        products.sort( ( a, b ) => a.price - b.price );
+        this.setState( { selectOption: range, ProductsList: products } );
+        break;
+      case "Highest":
+        products.sort( ( a, b ) => b.price - a.price );
+        this.setState( { selectOption: range, ProductsList: products } );
+        break;
+      default:
+        console.log( "In normal state " )
+    }
+
+  }
+
   render() {
     return (
       <div>
@@ -48,6 +73,8 @@ class App extends Component {
           removeItem={this.handleRemovedItem}
           displayCartItems={this.handleCartDisplay()}
           cartTotal={this.handleCartTotal()}
+          handleSelect={this.handleSelect}
+          selectOption={this.state.selectOption}
         />
       </div>
     );

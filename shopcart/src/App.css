@@ -125,3 +125,19 @@
 .card-text form {
   width: 250px;
 }
+
+/* sortPrice.js */
+.Sort-div {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.Sort-div p {
+  margin: 0;
+}
+
+.Sort-div select {
+  height: fit-content;
+  margin-left: 15px;
+}

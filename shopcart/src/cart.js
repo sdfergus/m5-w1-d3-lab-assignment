@@ -2,8 +2,6 @@ import React from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
 import "./App.css";
 import { Link } from "react-router-dom";
-// import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import FbLogin from "./fbLogin";
 
 function Cart( props ) {
   return (

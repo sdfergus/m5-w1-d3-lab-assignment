@@ -51,6 +51,8 @@ function Nav( props ) {
               productItems={props.productItems}
               addItem={props.addItem}
               removeItem={props.removeItem}
+              handleSelect={props.handleSelect}
+              selectOption={props.selectOption}
             />
           }
         />

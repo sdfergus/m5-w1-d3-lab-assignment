@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { faSquarePlus, faSquareMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SortPrice from './sortPrice';
 
 function DisplayProducts( props ) {
   const [ show, setShow ] = useState( false );  //to show modal - initial variable state is false
@@ -18,14 +19,19 @@ function DisplayProducts( props ) {
 
   return (
     <div className="Product-items">
+      <SortPrice
+        handleSelect={props.handleSelect}
+        selectOption={props.selectOption}
+      />
       <ListGroup>
         {props.productItems.map( ( product ) => (
           <ListGroupItem
             className='List-items py-3'
             key={product.id}
           >
-            <div className='Item-name'>
+            <div className='Item-name mb-2'>
               {product.name}
+              <span className="text-danger mx-3">${product.price}</span>
             </div>
             <span className='Item-contents'>
               <img
